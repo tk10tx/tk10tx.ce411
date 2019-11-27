@@ -1,0 +1,40 @@
+extends ../layouts/common.pug
+
+block content
+  h1 Create users
+
+  if errors
+    each error in errors
+        .alert.alert-danger= error
+
+
+  form(action='/users/create', method='POST')
+    .form-group
+        label(for='name') User name
+        input#name.form-control(name='name', type='text', value= values ? values.name : '')
+
+    .form-group
+        label(for='birthday') Birthday
+        input#birthday.form-control(name='birthday', type='text', value= values ? values.birthday : '')
+
+    .form-group
+        label(for='gender') Gender
+        input#gender.form-control(name='gender', type='text', value= values ? values.gender : '')
+
+    .form-group
+        label(for='address') Address
+        input#address.form-control(name='address', type='text', value= values ? values.address : '')
+
+    .form-group
+        label(for='phone') Phone number
+        input#phone.form-control(name='phone', type='text', value= values ? values.phone : '')
+
+    .form-group
+        label(for='email') Email
+        input#email.form-control(name='email', type='text', value= values ? values.email : '')
+    
+    .form-group
+        label(for='pass') Password
+        input#pass.form-control(name='pass', type='text', value= values ? values.pass : '')
+    
+    button.btn.btn-primary.ml-3 Create

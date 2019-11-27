@@ -1,0 +1,15 @@
+extends ../layouts/common
+
+block content
+	h1 Login
+	form(action='/users/create', method='POST')
+	  label User name
+	  br
+	  input(name='name_nv', type='text')
+	  br
+	  label Password
+	  br
+	  input(name='pass_nv', type='text')
+	  br
+	  
+	  button Login
